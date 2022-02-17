@@ -22,7 +22,7 @@ def task(common, tid, b_semaphore):
 def main():
     lp = []
     common = Value('i', 0)          # "variable" en comun
-    b_semaphore = BoundedSemaphore(10)
+    b_semaphore = BoundedSemaphore(1)
 
     for tid in range(N):
         lp.append(Process(target=task, args=(common, tid, b_semaphore)))
